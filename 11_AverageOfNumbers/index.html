@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding Numbers</title>
+
+    <script>
+      function calculateAverage() {
+        const numberArray = document.getElementById("numberInput").value;
+        const number = numberArray.split(",").map(Number);
+        console.log(number);
+        const sum = number.reduce((x, y) => x + y);
+        const avg = sum / numberArray.length;
+
+        if (isNaN(avg)) {
+          document.getElementById("result").textContent = "Invalid Input";
+        } else {
+          document.getElementById("result").textContent =
+            "the average is: " + avg;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Add Average Of Numbers</h1>
+    <p>Enter a list of number and calculate their average</p>
+    <input type="text" id="numberInput" />
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="result"></p>
+  </body>
+</html>

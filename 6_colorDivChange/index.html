@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Colorful Div</title>
+    <style>
+      #colorfulDiv {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        cursor: pointer;
+      }
+    </style>
+    <script>
+      function changeColor() {
+        var div = document.getElementById("colorfulDiv");
+        var currentColor = div.style.backgroundColor;
+        var newColor = currentColor === "blue" ? "red" : "blue";
+        div.style.backgroundColor = newColor;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Colorful Div</h1>
+    <div id="colorfulDiv" onclick="changeColor()"></div>
+  </body>
+</html>

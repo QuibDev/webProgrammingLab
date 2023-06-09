@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoApp</title>
+
+    <script>
+      function addTask() {
+        var task = document.getElementById("task").value;
+        console.log(task);
+
+        if (task) {
+          var taskList = document.getElementById("tasklist");
+          var listItem = document.createElement("li");
+
+          listItem.innerText = task;
+          taskList.appendChild(listItem);
+          //document.getElementById("tasklist").innerHTML = "<ul>" + task + "</ul>";
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Welcome TodoApp</h1>
+    <h2>Tasks</h2>
+    <ul id="tasklist"></ul>
+    <p>Press On the add task button to add task</p>
+    <input type="text" for="task" id="task" placeholder="Enter Task" />
+    <button onclick="addTask()">Add Task</button>
+  </body>
+</html>

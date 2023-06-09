@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Form With Validation</h1>
+    <form onsubmit="return validateForm()">
+      <!--This is where the error pops up-->
+      <div id="errorContainer" class="error"></div>
+
+      <!--This is the rest of the form-->
+      <label for="name">Name: </label>
+      <input type="text" id="name" required /><br /><br />
+      <label for="email">Email: </label>
+      <input type="email" id="email" required /><br /><br />
+      <label for="password">Password: </label>
+      <input type="password" id="password" required /><br /><br />
+      <label for="confirmPassword">Confirm Password: </label>
+      <input type="password" id="confirmPassword" /><br /><br />
+
+      <!--Input form button-->
+      <input type="submit" value="submit" />
+    </form>
+
+    <script>
+      function validateForm() {
+        var form = document.getElementById("form");
+        var errorContainer = document.getElementById("errorContainer");
+
+        if (!form.checkValidity()) {
+          errorContainer.innerHTML = "Please Fill out the form correctly.";
+          return false;
+        } else if (form.password.value !== form.confirmPassword.value) {
+          errorContainer.innerHTML = "Passwords don't match!";
+          return false;
+        } else {
+          errorContainer.innerHTML = "";
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
